@@ -1,0 +1,10 @@
+# Configuration file for the score-system project
+project_name: score-system
+author: Your Name
+version: 1
+python_version: "3.11"
+production_ready: false
+tags:
+  - pytest
+  - ci
+  - automation
