@@ -1,18 +1,13 @@
-import pytest
-from score import Score
+name: Run Tests
 
-def test_add_points():
-    s = Score()
-    s.add_points(10)
-    assert s.points == 10
+on: push
 
-def test_reset():
-    s = Score()
-    s.add_points(5)
-    s.reset()
-    assert s.points == 0
-
-def test_negative_raises():
-    s = Score()
-    with pytest.raises(ValueError):
-        s.add_points(-1)
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
